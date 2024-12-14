@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЛР №3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; 
+            min-height: 100vh; 
+        }
+
+        header {
+            background: linear-gradient(90deg, #62cff4, #2c67f2);
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        nav {
+            margin-top: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1em;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }	
+
+        main {
+            flex: 1; 
+            padding: 20px;
+            background-color: white;
+            margin: 20px auto;
+            width: 80%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #013b5a;
+        }
+
+        form {
+            margin: 20px 0;
+        }
+
+        form label {
+            margin-right: 10px;
+        }
+
+        form input {
+            margin: 0 10px;
+            padding: 5px;
+            text-align: center;
+        }
+
+        form button {
+            padding: 5px 15px;
+            background-color: #013b5a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #64c4d7;
+        }
+
+        #result p, #result2 p, #result3 p, #result4 p {
+            margin: 5px 0;
+        }
+
+        footer {
+            background: linear-gradient(90deg, #004ff9, #000000);
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            margin-top: auto; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Лабораторная работа №3</h1>
+        <nav>
+            <a href="../index.html">Главная</a>
+            <a href="">Лабораторная №3</a>
+            <a href="">Лабораторная №4</a>
+            <a href="">Лабораторная №5</a>
+            <a href="">Лабораторная №6</a>
+            <a href="https://github.com/Linokan?tab=repositories">GitHub</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Ветвления</h2>
+        <div>
+            <p><b>Задание 1. Даны два целых числа: A, B. Проверить истинность высказывания: «Каждое из чисел A и B нечетное».</b></p>
+            <form id="check">
+                <label for="numA">Введите число A:</label>
+                <input type="text" id="numA" name="numA" required>
+                <label for="numB">Введите число B:</label>
+                <input type="text" id="numB" name="numB" required>
+                <button type="button" onclick="checkOdd()">Проверить</button>
+            </form>
+            <div id="result">
+                <p>Результат: <span id="output"></span></p>
+            </div>
+        </div>
+
+        <div>
+            <p><b>Задание 2. Даны два числа. Вывести вначале большее, а затем меньшее из них.</b></p>
+            <form id="compare">
+                <label for="numA2">Введите число A:</label>
+                <input type="text" id="numA2" name="numA2" required>
+                <label for="numB2">Введите число B:</label>
+                <input type="text" id="numB2" name="numB2" required>
+                <button type="button" onclick="compareNumbers()">Сравнить</button>
+            </form>
+            <div id="result2">
+                <p>Результат: <span id="output2"></span></p>
+            </div>
+        </div>
+
+        <div>
+            <p><b>Задание 3. Вычислить значение функции y=f(x) при произвольных значениях x.</b></p>
+            <img src="../img/exercise2_itog.png" alt="3 задание" width="600">
+            <form id="calculateY">
+                <label for="xValue">Введите значение x:</label>
+                <input type="text" id="xValue" name="xValue" required>
+                <button type="button" onclick="calculateY()">Вычислить</button>
+            </form>
+            <div id="result3">
+                <p>Результат: <span id="output3"></span></p>
+            </div>
+        </div>
+
+        <div>   
+            <p><b>Задание 4. Вычислить значение функции y=f(x) при произвольных значениях x. Для вычисления значения функции использовать оператор switch.</b></p>
+            <img src="../img/exercise3_itog.png" alt="4 задание" width="600">
+            <form id="calculateY2">
+                <label for="xValue2">Введите значение x:</label>
+                <input type="text" id="xValue2" name="xValue2" required>
+                <button type="button" onclick="calculateY2()">Вычислить</button>
+            </form>
+            <div id="result4">
+                <p>Результат: <span id="output4"></span></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Студент: Иванов Андрей</p>
+        <p>Группа: ПИЭ-32</p>
+    </footer>
+
+    <script>
+        function checkOdd() {
+            const numA = document.getElementById("numA").value;
+            const numB = document.getElementById("numB").value;
+
+            if (isNaN(numA) || isNaN(numB) || numA.trim() === "" || numB.trim() === "") { 
+                document.getElementById("output").textContent = "Ошибка: введите корректные числа!";
+                return;
+            }
+
+            const A = parseInt(numA, 10);
+            const B = parseInt(numB, 10);
+
+            if (A % 2 !== 0 && B % 2 !== 0) {
+                document.getElementById("output").textContent = "True";
+            } else {
+                document.getElementById("output").textContent = "False";
+            }
+        }
+
+        function compareNumbers() {
+            const numA = document.getElementById("numA2").value;
+            const numB = document.getElementById("numB2").value;
+
+            if (isNaN(numA) || isNaN(numB) || numA.trim() === "" || numB.trim() === "") {
+                document.getElementById("output2").textContent = "Ошибка: введите корректные числа!";
+                return;
+            }
+
+            const A = parseFloat(numA);
+            const B = parseFloat(numB);
+
+            if (A > B) {
+                document.getElementById("output2").textContent = `${A}, ${B}`;
+            } else if (A < B) {
+                document.getElementById("output2").textContent = `${B}, ${A}`;
+            } else {
+                document.getElementById("output2").textContent = `Числа равны: ${A} и ${B}`;
+            }
+        }
+
+        function calculateY() {
+            const a = 2.7;
+            const b = -3.59;
+            let y;
+            const xValue = document.getElementById("xValue").value;
+
+            if (isNaN(xValue) || xValue.trim() === "") {
+                document.getElementById("output3").textContent = "Ошибка: введите корректное значение x!";
+                return;
+            }
+
+            const x = parseFloat(xValue);
+
+            if (x > 2) {
+                y = Math.pow(Math.cos(a * Math.pow(x, 2)), 3);
+            } else if (x <= -1) {
+                y = Math.pow(Math.sin(x), 2) + b / x;
+            } else {
+                y = 2 - Math.pow(Math.pow(x, 2), 3);
+            }
+
+            document.getElementById("output3").textContent = `y = ${y.toFixed(2)}`;
+        }
+
+        function calculateY2() {
+            const a = 2.7;
+            const b = -3.59;
+            let y;
+
+            const xValue = document.getElementById("xValue2").value;
+            const x = parseFloat(xValue);
+
+            switch (true) {
+                case x === 3:
+                    y = Math.pow(Math.cos(a * Math.pow(x, 2)), 3);
+                    break;
+                case x === -1:
+                    y = Math.pow(Math.sin(x), 2) + b / x;
+                    break;
+                case x === 1:
+                    y = Math.pow(2 - Math.pow(x, 2), 3);
+                    break;
+                default:
+                    document.getElementById("output4").textContent = "Ошибка: введите другое значение x!";
+                    return;
+            }
+
+            document.getElementById("output4").textContent = `y = ${y.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

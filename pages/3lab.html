@@ -10,7 +10,7 @@
     <header>
         <h1>Лабораторная работа №3</h1>
         <nav>
-            <a href="..\index.html">Главная</a>
+            <a href="../index.html">Главная</a>
             <a href="">Лабораторная №3</a>
             <a href="">Лабораторная №4</a>
             <a href="">Лабораторная №5</a>
@@ -21,16 +21,58 @@
 
     <main>
         <h2>Ветвления</h2>
-        <p>Задание 1. Даны два целых числа: A, B. Проверить истинность высказывания: «Каждое из чисел A и B нечетное».</p>
-        <form id="check">
-            <label for="numA">Введите число A:</label>
-            <input type="text" id="numA" name="numA" required>
-            <label for="numB">Введите число B:</label>
-            <input type="text" id="numB" name="numB" required>
-            <button type="button" onclick="checkOdd()">Проверить</button>
-        </form>
-        <div id="result">
-            <p>Результат: <span id="output"></span></p>
+        <div>
+            <p><b>Задание 1. Даны два целых числа: A, B. Проверить истинность высказывания: «Каждое из чисел A и B нечетное».</b></p>
+            <form id="check">
+                <label for="numA">Введите число A:</label>
+                <input type="text" id="numA" name="numA" required>
+                <label for="numB">Введите число B:</label>
+                <input type="text" id="numB" name="numB" required>
+                <button type="button" onclick="checkOdd()">Проверить</button>
+            </form>
+            <div id="result">
+                <p>Результат: <span id="output"></span></p>
+            </div>
+        </div>
+        
+        <div>
+            <p><b>Задание 2. Даны два числа. Вывести вначале большее, а затем меньшее из них.</b></p>
+            <form id="compare">
+                <label for="numA2">Введите число A:</label>
+                <input type="text" id="numA2" name="numA2" required>
+                <label for="numB2">Введите число B:</label>
+                <input type="text" id="numB2" name="numB2" required>
+                <button type="button" onclick="compareNumbers()">Сравнить</button>
+            </form>
+            <div id="result2">
+                <p>Результат: <span id="output2"></span></p>
+            </div>
+        </div>
+
+        <div>
+            <p><b>Задание 3. Вычислить значение функции y=f(x) при произвольных значениях x.</b></p>
+            <img src="../img/exercise2_itog.png" alt="3 задание" width="600">
+            <form id="calculateY">
+                <label for="xValue">Введите значение x:</label>
+                <input type="text" id="xValue" name="xValue" required>
+                <button type="button" onclick="calculateY()">Вычислить</button>
+            </form>
+            <div id="result3">
+                <p>Результат: <span id="output3"></span></p>
+            </div>
+        </div>
+
+        <div>   
+            <p><b>>Задание 4. Вычислить значение функции y=f(x) при произвольных значениях x. Для вычисления значения функции использовать оператор switch.</b></p>
+            <img src="../img/exercise3_itog.png" alt="4 задание" width="600">
+            <form id="calculateY2">
+                <label for="xValue2">Введите значение x:</label>
+                <input type="text" id="xValue2" name="xValue2" required>
+                <button type="button" onclick="calculateY2()">Вычислить</button>
+            </form>
+            <div id="result4">
+                <p>Результат: <span id="output4"></span></p>
+            </div>
         </div>
     </main>
 
