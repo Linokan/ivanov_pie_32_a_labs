@@ -2,29 +2,19 @@ function checkOdd() {
             const numA = document.getElementById("numA").value;
             const numB = document.getElementById("numB").value;
 
-            if (isNaN(numA) || isNaN(numB) || numA.trim() === "" || numB.trim() === "") { 
-                document.getElementById("output").textContent = "Ошибка: введите корректные числа!";
-                return;
-            }
-
-            const A = parseInt(numA, 10);
-            const B = parseInt(numB, 10);
+            const A = parseInt(numA);
+            const B = parseInt(numB);
 
             if (A % 2 !== 0 && B % 2 !== 0) {
                 document.getElementById("output").textContent = "True";
             } else {
                 document.getElementById("output").textContent = "False";
             }
-        }
+}
 
 function compareNumbers() {
     const numA = document.getElementById("numA2").value;
     const numB = document.getElementById("numB2").value;
-
-    if (isNaN(numA) || isNaN(numB) || numA.trim() === "" || numB.trim() === "") {
-        document.getElementById("output2").textContent = "Ошибка: введите корректные числа!";
-        return;
-    }
 
     const A = parseFloat(numA);
     const B = parseFloat(numB);
@@ -43,11 +33,6 @@ function calculateY() {
     const b = -3.59;
     let y;
     const xValue = document.getElementById("xValue").value;
-
-    if (isNaN(xValue) || xValue.trim() === "") {
-        document.getElementById("output3").textContent = "Ошибка: введите корректное значение x!";
-        return;
-    }
 
     const x = parseFloat(xValue);
 

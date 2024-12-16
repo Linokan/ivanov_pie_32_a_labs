@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЛР №4</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Лабораторная работа №4</h1>
+        <nav>
+            <a href="../index.html">Главная</a>
+            <a href="3lab.html">Лабораторная №3</a>
+            <a href="">Лабораторная №4</a>
+            <a href="">Лабораторная №5</a>
+            <a href="">Лабораторная №6</a>
+            <a href="https://github.com/Linokan/ivanov_pie_32_a_labs">GitHub</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Find Odd Numbers</h1>
+        <form id="numbersForm">
+            <label for="numbers">Введите числа через пробел:</label><br>
+            <input type="text" id="numbers" name="numbers" required><br><br>
+            <button type="button" onclick="findOddNumbers()">Найти нечетные</button>
+        </form>
+
+        <h2>Results:</h2>
+    <p id="oddIndexes"></p>
+    <p id="oddCount"></p>
+        
+        <div>
+            <p><b>Задание 2. Даны два числа. Вывести вначале большее, а затем меньшее из них.</b></p>
+            <form id="compare">
+                <label for="numA2">Введите число A:</label>
+                <input type="text" id="numA2" name="numA2" required>
+                <label for="numB2">Введите число B:</label>
+                <input type="text" id="numB2" name="numB2" required>
+                <button type="button" onclick="compareNumbers()">Сравнить</button>
+            </form>
+            <div id="result2">
+                <p>Результат: <span id="output2"></span></p>
+            </div>
+        </div>
+
+        <div>
+            <p><b>Задание 3. Вычислить значение функции y=f(x) при произвольных значениях x.</b></p>
+            <img src="../img/exercise2_itog.png" alt="3 задание" width="600">
+            <form id="calculateY">
+                <label for="xValue">Введите значение x:</label>
+                <input type="text" id="xValue" name="xValue" required>
+                <button type="button" onclick="calculateY()">Вычислить</button>
+            </form>
+            <div id="result3">
+                <p>Результат: <span id="output3"></span></p>
+            </div>
+        </div>
+
+        <div>   
+            <p><b>>Задание 4. Вычислить значение функции y=f(x) при произвольных значениях x. Для вычисления значения функции использовать оператор switch.</b></p>
+            <img src="../img/exercise3_itog.png" alt="4 задание" width="600">
+            <form id="calculateY2">
+                <label for="xValue2">Введите значение x:</label>
+                <input type="text" id="xValue2" name="xValue2" required>
+                <button type="button" onclick="calculateY2()">Вычислить</button>
+            </form>
+            <div id="result4">
+                <p>Результат: <span id="output4"></span></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Студент: Иванов Андрей</p>
+        <p>Группа: ПИЭ-32</p>
+    </footer>
+
+    <script src="../js/script4lab.js"></script>
+</body>
+</html>
