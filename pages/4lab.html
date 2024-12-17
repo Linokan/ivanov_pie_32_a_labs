@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ЛР №4</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -20,55 +21,25 @@
     </header>
 
     <main>
-        <h1>Find Odd Numbers</h1>
-        <form id="numbersForm">
-            <label for="numbers">Введите числа через пробел:</label><br>
-            <input type="text" id="numbers" name="numbers" required><br><br>
-            <button type="button" onclick="findOddNumbers()">Найти нечетные</button>
-        </form>
-
-        <h2>Results:</h2>
-    <p id="oddIndexes"></p>
-    <p id="oddCount"></p>
+        <h2>Циклы</h2>
         
         <div>
-            <p><b>Задание 2. Даны два числа. Вывести вначале большее, а затем меньшее из них.</b></p>
-            <form id="compare">
-                <label for="numA2">Введите число A:</label>
-                <input type="text" id="numA2" name="numA2" required>
-                <label for="numB2">Введите число B:</label>
-                <input type="text" id="numB2" name="numB2" required>
-                <button type="button" onclick="compareNumbers()">Сравнить</button>
-            </form>
-            <div id="result2">
-                <p>Результат: <span id="output2"></span></p>
-            </div>
+            <p><b>Задание 1. Дано  целое  число  N  и  набор  из  N целых  чисел.<br>  
+            Вывести  в  том  же порядке номера  всех нечетных  чисел  из  данного набора и  количество K таких чисел.</b></p>
+            <input type="number" id="numN" placeholder="Введите количество чисел">
+            <button onclick="generateInputs()">Выбрать</button>
+            <div id="inputs"></div>
+            <button onclick="findOddNumbers()">Показать нечетные числа</button>
+            <div id="result"></div>
         </div>
 
         <div>
-            <p><b>Задание 3. Вычислить значение функции y=f(x) при произвольных значениях x.</b></p>
-            <img src="../img/exercise2_itog.png" alt="3 задание" width="600">
-            <form id="calculateY">
-                <label for="xValue">Введите значение x:</label>
-                <input type="text" id="xValue" name="xValue" required>
-                <button type="button" onclick="calculateY()">Вычислить</button>
-            </form>
-            <div id="result3">
-                <p>Результат: <span id="output3"></span></p>
-            </div>
-        </div>
-
-        <div>   
-            <p><b>>Задание 4. Вычислить значение функции y=f(x) при произвольных значениях x. Для вычисления значения функции использовать оператор switch.</b></p>
-            <img src="../img/exercise3_itog.png" alt="4 задание" width="600">
-            <form id="calculateY2">
-                <label for="xValue2">Введите значение x:</label>
-                <input type="text" id="xValue2" name="xValue2" required>
-                <button type="button" onclick="calculateY2()">Вычислить</button>
-            </form>
-            <div id="result4">
-                <p>Результат: <span id="output4"></span></p>
-            </div>
+            <p><b>Задание 2. Даны два целых числа A и B (A &lt; B). 
+                Найти произведение всех целых чисел от A до B включительно.</b></p>
+            <input type="number" id="numA" placeholder="Введите число A">
+            <input type="number" id="numB" placeholder="Введите число B">
+            <button onclick="multiplicationNumbers()">Найти произведение</button>
+            <div id="result2"></div>
         </div>
     </main>
 

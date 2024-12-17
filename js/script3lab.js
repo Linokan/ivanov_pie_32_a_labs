@@ -51,8 +51,8 @@ function calculateY2() {
     const a = 2.7;
     const b = -3.59;
     let y;
-
     const xValue = document.getElementById("xValue2").value;
+    
     const x = parseFloat(xValue);
 
     switch (true) {

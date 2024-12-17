@@ -1,38 +1,56 @@
-document.getElementById('numN').addEventListener('change', function() {
-    const n = parseInt(this.value);
-    const container = document.getElementById('numbersInput');
-    container.innerHTML = '';
-    
-    for(let i = 0; i < n; i++) {
-        const label = document.createElement('label');
-        label.textContent = `Введите число ${i + 1}: `;
-        
+function generateInputs() {
+    const numN = parseInt(document.getElementById('numN').value);
+    const inputContainer = document.getElementById('inputs');
+    inputContainer.innerHTML = '';
+
+    if (numN <= 0) {
+        document.getElementById('result').innerHTML = 'Введите положительное число!';
+        return;
+    }
+
+    for (let i = 0; i < numN; i++) {
         const input = document.createElement('input');
         input.type = 'number';
-        input.id = `num${i}`;
-        input.required = true;
-        
-        container.appendChild(label);
-        container.appendChild(input);
-        container.appendChild(document.createElement('br'));
+        input.placeholder = `Число ${i + 1}`;
+        input.className = 'number-input';
+        inputContainer.appendChild(input);
+        inputContainer.appendChild(document.createElement('br'));
     }
-});
 
-function checkOdd() {
-    const n = parseInt(document.getElementById('numN').value);
-    let oddNumbers = [];
-    
-    for(let i = 0; i < n; i++) {
-        const num = parseInt(document.getElementById(`num${i}`).value);
-        if(num % 2 !== 0) {
-            oddNumbers.push(i + 1);
+    document.getElementById('result').innerHTML = '';
+}
+
+function findOddNumbers() {
+    const inputs = document.getElementsByClassName('number-input');
+    const oddIndexes = [];
+    let oddCount = 0;
+
+    for (let i = 0; i < inputs.length; i++) {
+        const value = parseInt(inputs[i].value);
+        if (value % 2 !== 0) {
+            oddIndexes.push(i + 1);
+            oddCount++;
         }
     }
+
+    document.getElementById('result').innerHTML = 
+        `Номера нечетных чисел: ${oddIndexes.join(', ')}<br>
+        Количество нечетных чисел: ${oddCount}`;
+}
+
+function multiplicationNumbers() {
+    const numA = parseInt(document.getElementById('numA').value);
+    const numB = parseInt(document.getElementById('numB').value);
+    let product = 1;
     
-    const output = document.getElementById('output');
-    if(oddNumbers.length > 0) {
-        output.textContent = `Номера нечетных чисел: ${oddNumbers.join(', ')}. Количество нечетных чисел: ${oddNumbers.length}`;
-    } else {
-        output.textContent = 'Нечетных чисел не найдено';
+    if (numA >= numB) {
+        document.getElementById('result2').innerHTML = 'Число A должно быть меньше числа B!';
+        return;
+    }   
+    
+    for (let i = numA; i <= numB; i++) {
+        product *= i;
     }
+    
+    document.getElementById('result2').innerHTML = `Произведение чисел от ${numA} до ${numB} равно: ${product}`;
 }
