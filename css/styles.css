@@ -63,6 +63,7 @@ button {
     padding: 8px 20px;
     font-size: 0.6em;
     background-color: #013b5a;
+    margin-right: 10px;
     color: white;
     border: none;
     border-radius: 5px;
@@ -79,4 +80,58 @@ footer {
     padding: 10px 0;
     text-align: center;
     margin-top: auto; 
+}
+
+#game-output {
+    margin-top: 20px;
+    font-size: 36px;
+}
+
+#game-image {
+    margin-top: 20px;
+    max-width: 600px;
+    height: auto;
+}
+
+/* Адаптация под мобильные устройства */
+@media (max-width: 768px) {
+    header, footer {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 140%;
+    }
+
+    h3 {
+        font-size: 140%;
+    }
+
+    #game-output {
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 15px;
+        max-width: 100%;
+        margin: 0 10px;
+    }
+
+    button {
+        width: 90%;
+        max-width: none;
+        margin: 5px 0;
+        font-size: 14px;
+        height: 40px;
+        margin-right: 10px;
+    }
+
+    #game-image {
+        max-width: 100%;
+    }
 }
