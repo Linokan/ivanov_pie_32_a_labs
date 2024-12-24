@@ -21,9 +21,24 @@
     </header>
 
     <main>
-        <h2>В работе</h2>
-        
-        <img src="../img/isagi.png" alt="isagi" width="1400">
+        <div>
+            <p><b>Задание 1. Написать функцию f(x,C), вычисляющую и возвращающую число Y, полученное из целого числа x приписыванием к нему слева цифры С.<br>
+                Продемонстрировать ее работу для трех чисел. Напишу блок-схему для первого задания.</b></p>
+            <input type="number" id="x" placeholder="Введите число x">
+            <input type="number" id="C" placeholder="Введите число C">
+            <button onclick="demonstrationF()">Вычислить</button>
+            <div id="result"></div>
+        </div>
+
+        <div>
+            <p><b>Задание 2. Дана матрица размера M × N и целое число K (1 ≤ K ≤ N). <br>
+                Вывести элементы K-го столбца данной матрицы. Реализовать  ввод, формирование/обработку и вывод массивов с применением функций.</b></p>
+            <input type="number" id="lines" placeholder="Введите количество строк матрицы">
+            <input type="number" id="columns" placeholder="Введите количество столбцов матрицы">
+            <input type="number" id="column" placeholder="Введите номер столбца">
+            <button onclick="mainMatrix()">Ввести столбец матрицы</button>
+            <div id="matrixResult"></div>
+        </div>
     </main>
 
     <footer>

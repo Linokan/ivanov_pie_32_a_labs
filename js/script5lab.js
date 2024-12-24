@@ -37,11 +37,11 @@ function nextStage() {
             }
             break;
         case 3:
-            if (previousChoice === 5) {
+            if (previousChoice === 6) {
                 document.getElementById('game-output').innerHTML = `Я просто отключил звонок и снова откинулся на спинку сиденья, поглощённый думами. Город за окном сменял свои пейзажи, а мои мысли плавно уносились в сторону будущего. Небо было темным, но звезды на нём ещё ярко сверкали. Я невольно улыбнулся — может, это всё просто очередной странный день, который скоро закончится?
                 <br><button onclick="choosePath(7)">Закрыть глаза и расслабиться</button><button onclick="choosePath(8)">Посмотреть в окно</button>`;
-                document.getElementById('game-image').src = '../img/img4.png';
-            } else {
+                document.getElementById('game-image').src = '../img/img5.png';
+            } else { 
                 document.getElementById('game-output').innerHTML = `Я поднял трубку, и на другом конце раздался хриплый, искажённый голос, который будто бы исходил не от человека. "Хорошо, что ты ответил" — прошептал собеседник, его слова как нож вонзились в меня. И на этом связь оборвалась, оставив меня в полной тишине и страхе, когда я понял, что в комнате стало холодно, а вокруг будто что-то тёмное наблюдает за мной.
                 <br><button onclick="choosePath(9)">Оглянуться по салону такси</button><button onclick="choosePath(9)">Посмотреть в окно</button>`;
                 document.getElementById('game-image').src = '../img/img5.png';
@@ -55,11 +55,11 @@ function nextStage() {
             } else if (previousChoice === 7) {
                 document.getElementById('game-output').innerHTML = `Я закрыл глаза и растворился в тишине, но постепенно почувствовал, как тяжесть на груди становится невыносимой. Я не мог пошевелиться, не мог вдохнуть. В какой-то момент осознал, что не ощущаю собственного тела, и паника охватила меня. Я пытался крикнуть, но не мог. Моё сознание стало угасать, и вскоре всё исчезло.
                 <br>Плохая концовка №3. Тишина<br><button onclick="startGame()">Начать заново</button>`;
-                document.getElementById('game-image').src = '../img/img6.png';
+                document.getElementById('game-image').src = '../img/img6.jpg';
             } else if (previousChoice === 8) {
                 document.getElementById('game-output').innerHTML = `Я посмотрел в окно, но вместо ночных огней города улицы были полны мрак и тени, которые не поддавались логике. Всё за окном начало искажаться, а лица людей, мелькавших в темноте, становились нечёткими и страшными. Это не могло быть реальностью, но страх стал нарастать. Вдруг я заметил в отражении стекла нечто темное — фигуру, стоящую прямо за такси. На мгновение мне показалось, что она приближалась, но когда я снова посмотрел в окно, её уже не было.
                 <br>Плохая концовка №4. Размывание<br><button onclick="startGame()">Начать заново</button>`;
-                document.getElementById('game-image').src = '../img/img7.png';
+                document.getElementById('game-image').src = '../img/img7.jpg';
             }
             break;
         case 5:
